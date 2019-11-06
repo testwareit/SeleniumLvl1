@@ -6,7 +6,8 @@ using System.Threading;
 
 namespace Tests
 {
-    public class Tests
+    [TestFixture]
+    public class Lesson1ShowDriver
     {
         IWebDriver driver;
 
