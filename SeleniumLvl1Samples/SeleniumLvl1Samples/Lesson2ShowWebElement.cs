@@ -2,12 +2,13 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
+using System.Linq;
 using System.Threading;
 
 namespace Tests
 {
     [TestFixture]
-    public class Lesson2ShowWebElement
+    public class Lesson2WebElement
     {
         IWebDriver driver;
 
@@ -29,12 +30,24 @@ namespace Tests
         [Test]
         public void Sample_1_GetElement()
         {
-            driver.Navigate().GoToUrl("https://testware.it/courses/sw1/sample1.html");
+            driver.Navigate().GoToUrl("https://google.com");
 
-            IWebElement buttonDisplayDate = driver.FindElement(By.Id("showDate"));
-            buttonDisplayDate.Click();
+            IWebElement search = driver.FindElement(By.XPath("//input[@name='q']"));
+            search.SendKeys("selenium");
+        }
 
-            IWebElement txtDisplayedDate = driver.FindElement(By.Id("demo"));
+        [Test]
+        public void Sample_2_GetElements()
+        {
+            driver.Navigate().GoToUrl("https://google.com");
+
+            IWebElement search = driver.FindElement(By.XPath("//input[@name='q']"));
+            search.SendKeys("selenium");
+
+            var buttons = driver.FindElements(By.XPath("//input[@name='btnK']"));
+            var buttonSearch = buttons.First(w => w.Displayed == true);
+
+            buttonSearch.Click();
         }
     }
 }
