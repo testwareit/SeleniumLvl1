@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+jQuery.active = 1;
+</script>
+</head>
+<body>
+
+<h1>My First JavaScript</h1>
+
+<button type="button" id="showDate"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+<div class="container">
+  <div class="row">
+      <button class="col-1" type="button" id="show1" onclick="document.getElementById('show1Txt').hidden = false">Show1</button>
+      <button class="col-1" type="button" id="show2" onclick="document.getElementById('show2Txt').hidden = false">Show2</button>
+      <button class="col-1" type="button" id="show3" onclick="document.getElementById('show3Txt').hidden = false">Show3</button>
+      <button class="col-1" type="button" id="show4" onclick="document.getElementById('show4Txt').hidden = false">Show4</button>
+      <button class="col-1" type="button" id="show5" onclick="document.getElementById('show5Txt').hidden = false">Show5</button>
+  </div>
+  <div class="row">
+      <button class="col-1" type="button" id="hide1" onclick="document.getElementById('show1Txt').hidden = true">Hide1</button>
+      <button class="col-1" type="button" id="hide2" onclick="document.getElementById('show2Txt').hidden = true">Hide2</button>
+      <button class="col-1" type="button" id="hide3" onclick="document.getElementById('show3Txt').hidden = true">Hide3</button>
+      <button class="col-1" type="button" id="hide4" onclick="document.getElementById('show4Txt').hidden = true">Hide4</button>
+      <button class="col-1" type="button" id="hide5" onclick="document.getElementById('show5Txt').hidden = true">Hide5</button>
+  </div>
+</div>
+
+<p id="show1Txt" hidden>Text in show 1</p>
+<p id="show2Txt" hidden>Text in show 2</p>
+<p id="show3Txt" hidden>Text in show 3</p>
+<p id="show4Txt" hidden>Text in show 4</p>
+<p id="show5Txt" hidden>Text in show 5</p>
+</body>
+</html> 
