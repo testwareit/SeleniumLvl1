@@ -28,7 +28,7 @@ namespace Tests
         }
 
         [Test]
-        public void Sample_1_GetElement()
+        public void Sample_01_GetElement()
         {
             driver.Navigate().GoToUrl("https://google.com");
 
@@ -36,7 +36,7 @@ namespace Tests
             search.SendKeys("selenium");
         }
         [Test]
-        public void Sample_1_GetElement_ElementNotFound()
+        public void Sample_01_GetElement_ElementNotFound()
         {
             driver.Navigate().GoToUrl("https://google.com");
 
@@ -44,8 +44,9 @@ namespace Tests
             search.SendKeys("selenium");
         }
 
+
         [Test]
-        public void Sample_2_GetElement_Text()
+        public void Sample_02_GetElement_Text()
         {
             driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/");
 
@@ -57,26 +58,38 @@ namespace Tests
         }
 
         [Test]
-        public void Sample_3_GetElement_AddRemove()
+        public void Sample_02_GetElement_Enabled_Displayed()
+        {
+            driver.Navigate().GoToUrl("https://testware.it/courses/sw1/sample1FindElementEnabledDisplayed.html");
+
+            var btnEnabledDisabled = driver.FindElement(By.Id("buttonToBeEnabled"));
+
+            var btnShowHide = driver.FindElement(By.Id("buttonToBeHidden"));
+        }
+
+        [Test]
+        public void Sample_03_GetElement_AddRemove()
         {
             driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
 
             //var addButton = driver.FindElement(By.)
         }
 
+       
+
         [Test]
-        public void Sample_4_GetElements_AddRemove()
+        public void Sample_04_GetElements_AddRemove()
         {
             driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
         }
 
         [Test]
-        public void Sample_4_GetElements_AddRemove_Negative()
+        public void Sample_04_GetElements_AddRemove_Negative()
         {
             driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/add_remove_elements/");
         }
         [Test]
-        public void Sample_5_GetElements_Google()
+        public void Sample_05_GetElements_Google()
         {
             driver.Navigate().GoToUrl("https://google.com");
 
@@ -90,7 +103,7 @@ namespace Tests
         }
 
         [Test]
-        public void Sample_6_GetElement_Clear()
+        public void Sample_06_GetElement_Clear()
         {
             driver.Navigate().GoToUrl("https://google.com");
 
@@ -101,7 +114,7 @@ namespace Tests
         }
 
         [Test]
-        public void Sample_7_GetElement_Submit()
+        public void Sample_07_GetElement_Submit()
         {
             driver.Navigate().GoToUrl("https://google.com");
 
@@ -109,46 +122,6 @@ namespace Tests
             search.SendKeys("selenium");
 
             search.Submit();
-        }
-
-        [Test]
-        public void Sample_8_GetElement_GetAttribute()
-        {
-            driver.Navigate().GoToUrl("https://google.com");
-
-            IWebElement search = driver.FindElement(By.XPath("//input[@name='q']"));
-            search.SendKeys("selenium");
-        }
-
-        [Test]
-        public void Sample_9_GetElement_GetCssValue()
-        {
-            driver.Navigate().GoToUrl("https://google.com");
-
-            IWebElement search = driver.FindElement(By.XPath("//input[@name='q']"));
-        }
-
-        [Test]
-        public void Sample_10_GetElement_Enabled_Displayed()
-        {
-            driver.Navigate().GoToUrl("https://google.com");
-
-            IWebElement search = driver.FindElement(By.XPath("//input[@name='q']"));
-
-
-        }
-
-        [Test]
-        public void Sample_11_GetElement_Checkboxes()
-        {
-            driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/checkboxes");
-        }
-
-        [Test]
-        public void Sample_12_GetElement_Dropdown()
-        {
-            driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/dropdown");
-
         }
     }
 }
