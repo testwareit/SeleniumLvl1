@@ -189,5 +189,18 @@ namespace Tests
             var element = driver.FindElement(By.Id("elementToBeHidden"));
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].style.display='none'", element);
         }
+
+        [Test]
+        public void Sample_22_Javascript()
+        {
+            driver.Navigate().GoToUrl("https://testware.it/courses/sw1/sample7ScrollToElement.html");
+
+            var element = driver.FindElement(By.Id("blinkTower"));
+
+           
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+
+            element.Click();
+        }
     }
 }
