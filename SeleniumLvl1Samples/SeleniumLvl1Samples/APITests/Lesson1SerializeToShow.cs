@@ -22,7 +22,6 @@ namespace APITests
             };
 
             var objectSerialized = JsonConvert.SerializeObject(payload);
-
         }
 
         [Test]
@@ -42,27 +41,52 @@ namespace APITests
             var objectSerialized = JsonConvert.SerializeObject(payload);
 
         }
+        public class TestClassApiToSerializeToShow
+        {
+            public string A { get; set; }
+            public int Bint { get; set; }
+
+            public List<string> ListOfStrings { get; set; }
+        }
+
+        public class TestClassApiToSerializeDictionaryToShow
+        {
+            public string A { get; set; }
+            public int Bint { get; set; }
+
+            public Dictionary<string, InnerClassToSerialize> DictOfStrings { get; set; }
+        }
+
+        public class InnerClassToSerialize
+        {
+            public string A { get; set; }
+            public int Bint { get; set; }
+        }
+
+
+        [Test]
+        public void Sample_3_SerializeObjectOnlyValues()
+        {
+            var obj = new ClassOnlyValues
+            {
+                Name = "Grzegorz",
+                Surname = "Brzeczyszczykiewicz"
+            };
+
+            var objectSerialized = JsonConvert.SerializeObject(obj);
+        }
+
+        public class ClassOnlyValues
+        {
+            public string Name { get; set; }
+            public string Surname { get; set; }
+
+            //public override string ToString()
+            //{
+            //    return $"{Name}:{Surname}";
+            //}
+        }
     }
 
-    public class TestClassApiToSerializeToShow
-    {
-        public string A { get; set; }
-        public int Bint { get; set; }
-
-        public List<string> ListOfStrings { get; set; }
-    }
-
-    public class TestClassApiToSerializeDictionaryToShow
-    {
-        public string A { get; set; }
-        public int Bint { get; set; }
-
-        public Dictionary<string,InnerClassToSerialize> DictOfStrings { get; set; }
-    }
-
-    public class InnerClassToSerialize
-    {
-        public string A { get; set; }
-        public int Bint { get; set; }
-    }
+   
 }

@@ -66,13 +66,6 @@ namespace APITests
         public void Sample_4_PostSimpleApi()
         {
             string uri = "https://jsonplaceholder.typicode.com/posts/1";
-
-            HttpClient httpClient = new HttpClient();
-
-            var response = httpClient.GetStringAsync(uri);
-            Task.WaitAll(response);
-
-            var result = response.Result;
         }
     }
 }
